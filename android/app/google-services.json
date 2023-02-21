@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "974565789949",
+    "project_id": "animas-4aa87",
+    "storage_bucket": "animas-4aa87.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:974565789949:android:f5a5a1a4f96ae6d7e16e94",
+        "android_client_info": {
+          "package_name": "com.example.animas"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "974565789949-78fjc8fmnfclf1geg2m4msu5uv1d2nnj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAP5SvKTEagfrvUOYrM6zJd3coLhAZ32Gw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "974565789949-78fjc8fmnfclf1geg2m4msu5uv1d2nnj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
