@@ -71,6 +71,12 @@ flutter:
   assets:
     - assets/images/logo.jpg
     - assets/images/google-logo.png
+    - assets/images/sites/asura.jpeg
+    - assets/images/sites/alpha.png
+    - assets/images/sites/flame.jpeg
+    - assets/images/sites/omega.png
+    - assets/images/sites/luminous.png
+    - assets/images/sites/realm.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

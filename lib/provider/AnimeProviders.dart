@@ -6,32 +6,32 @@ class AnimeProviders with ChangeNotifier {
   final List<AnimeProvider> _allProvider = [
     AnimeProvider(
       "asura",
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_UozQkECBmfVpiKlkykP33A3dHQC0_XVsWw&usqp=CAU",
+      "assets/images/sites/asura.jpeg",
       "best place to enjoy reading manhwas",
     ),
     AnimeProvider(
       "alpha",
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_UozQkECBmfVpiKlkykP33A3dHQC0_XVsWw&usqp=CAU",
+      "assets/images/sites/alpha.png",
       "best place to enjoy reading manhwas",
     ),
     AnimeProvider(
       "flame",
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_UozQkECBmfVpiKlkykP33A3dHQC0_XVsWw&usqp=CAU",
+      "assets/images/sites/flame.jpeg",
       "best place to enjoy reading manhwas",
     ),
     AnimeProvider(
       "omega",
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_UozQkECBmfVpiKlkykP33A3dHQC0_XVsWw&usqp=CAU",
+      "assets/images/sites/omega.png",
       "best place to enjoy reading manhwas",
     ),
     AnimeProvider(
       "luminous",
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_UozQkECBmfVpiKlkykP33A3dHQC0_XVsWw&usqp=CAU",
+      "assets/images/sites/luminous.png",
       "best place to enjoy reading manhwas",
     ),
     AnimeProvider(
       "realm",
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_UozQkECBmfVpiKlkykP33A3dHQC0_XVsWw&usqp=CAU",
+      "assets/images/sites/realm.png",
       "best place to enjoy reading manhwas",
     )
   ];

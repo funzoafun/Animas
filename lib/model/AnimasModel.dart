@@ -1,5 +1,6 @@
-class Animes {
-  int count;
+import 'package:flutter/cupertino.dart';
+
+class Animas with ChangeNotifier {
   String mangaid;
   String mangaTitle;
   String mangaCover;
@@ -9,8 +10,7 @@ class Animes {
   String provider;
   String scrapeDate;
 
-  Animes({
-    required this.count,
+  Animas({
     required this.mangaid,
     required this.mangaTitle,
     required this.mangaCover,

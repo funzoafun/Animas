@@ -1,4 +1,6 @@
-class AnimeProvider {
+import 'package:flutter/cupertino.dart';
+
+class AnimeProvider with ChangeNotifier {
   String name;
   String image;
   String description;
