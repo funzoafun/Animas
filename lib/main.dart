@@ -37,15 +37,20 @@ class MyApp extends StatelessWidget {
 
           // text theme
           textTheme: const TextTheme(
-            displayLarge:
-                TextStyle(fontSize: 72.0, fontWeight: FontWeight.bold),
-            titleLarge: TextStyle(fontSize: 36.0, fontStyle: FontStyle.italic),
-            titleMedium: TextStyle(
-                fontFamily: "JosefinSans",
-                fontSize: 20,
-                fontWeight: FontWeight.bold),
-            bodyMedium: TextStyle(fontSize: 14.0, fontFamily: 'Hind'),
-          ),
+              displayLarge:
+                  TextStyle(fontSize: 72.0, fontWeight: FontWeight.bold),
+              titleLarge:
+                  TextStyle(fontSize: 36.0, fontStyle: FontStyle.italic),
+              titleMedium: TextStyle(
+                  fontFamily: "JosefinSans",
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold),
+              bodyMedium: TextStyle(fontSize: 14.0, fontFamily: 'Hind'),
+              titleSmall: TextStyle(
+                  fontFamily: "Quicksand",
+                  fontSize: 20,
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold)),
         ),
         // routes
         routes: {

@@ -1,12 +1,10 @@
 import 'dart:convert';
-import 'package:flutter_layout_grid/flutter_layout_grid.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../widgets/AnimeItem.dart';
+import '../widgets/AnimeProviderItem.dart';
 import '../provider/AnimeProviders.dart';
 import '../provider/api_provider.dart';
-import '../model/AnimasModel.dart';
 import '../screens/ScanlationsAnimes.dart';
 
 class Home extends StatelessWidget {
@@ -25,28 +23,34 @@ class Home extends StatelessWidget {
         Provider.of<AnimeProviders>(context, listen: false).allProviders;
 
     return Scaffold(
-      appBar: AppBar(
-          title: Text(
-        "SCANLATIONS",
-        textAlign: TextAlign.center,
-      )),
-      body: SafeArea(
-        child: Center(
-            child: GridView.builder(
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2,
-                    crossAxisSpacing: 1,
-                    mainAxisSpacing: 1,
-                    childAspectRatio: 2 / 3),
-                itemCount: allProviders.length,
-                itemBuilder: ((context, index) => InkWell(
-                    onTap: (() => Navigator.of(context).pushNamed(
-                        ScanlationsAnimes.routeName,
-                        arguments: allProviders[index].name)),
-                    child: ChangeNotifierProvider.value(
-                      value: allProviders[index],
-                      child: AnimeItem(),
-                    ))))),
+      backgroundColor: Color.fromARGB(214, 28, 113, 192),
+      body: Center(
+        child: Column(
+          children: [
+            Container(
+              margin: EdgeInsets.only(top: 100),
+              child: Text(
+                "All your scans at one place!",
+                style: Theme.of(context).textTheme.titleSmall,
+              ),
+            ),
+            Expanded(
+              child: Container(
+                  margin: EdgeInsets.only(top: 20, left: 100, right: 100),
+                  child: ListView.builder(
+                    itemBuilder: ((context, index) => InkWell(
+                          onTap: (() => Navigator.of(context).pushNamed(
+                              ScanlationsAnimes.routeName,
+                              arguments: allProviders[index].name)),
+                          child: ChangeNotifierProvider.value(
+                              value: allProviders[index],
+                              child: AnimeProviderItem()),
+                        )),
+                    itemCount: allProviders.length,
+                  )),
+            ),
+          ],
+        ),
       ),
     );
   }

@@ -95,6 +95,9 @@ flutter:
         - asset: assets/fonts/JosefinSans-LightItalic.ttf
         - asset: assets/fonts/JosefinSans-ExtraLightItalic.ttf
           style: italic
+    - family: Quicksand
+      fonts:
+        - asset: assets/fonts/Quicksand-VariableFont_wght.ttf
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

@@ -23,7 +23,7 @@ class ApiProvider {
 
   Future<List<Animas>> getAnimesByProvider(String provider) async {
     final Uri url = Uri.parse(
-        "https://manga-scrapper.p.rapidapi.com/series/?provider=${provider}&limit=100");
+        "https://manga-scrapper.p.rapidapi.com/series/?provider=${provider}&limit=10");
     final headers = {
       'X-RapidAPI-Key': 'e78778340fmshc8dfaf9b064c385p10da98jsn4f7fd7116ce3',
       'X-RapidAPI-Host': 'manga-scrapper.p.rapidapi.com'
