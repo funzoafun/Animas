@@ -1,4 +1,4 @@
-import 'package:animas/provider/AnimeProviders.dart';
+import 'package:animas/provider/scanlations_provider.dart';
 import 'package:animas/screens/ScanlationsAnimes.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(
-          create: (ctx) => AnimeProviders(),
+          create: (ctx) => ScanlationProvider(),
         ),
         ChangeNotifierProvider(
           create: (ctx) => Animes(),

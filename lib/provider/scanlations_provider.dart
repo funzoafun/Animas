@@ -1,42 +1,42 @@
 import 'package:flutter/cupertino.dart';
 
-import '../model/ProviderModel.dart';
+import '../model/ScnalationModel.dart';
 
-class AnimeProviders with ChangeNotifier {
-  final List<AnimeProvider> _allProvider = [
-    AnimeProvider(
+class ScanlationProvider with ChangeNotifier {
+  final List<ScanlationModel> _allProvider = [
+    ScanlationModel(
       "asura",
       "assets/images/sites/asura.jpeg",
       "best place to enjoy reading manhwas",
     ),
-    AnimeProvider(
+    ScanlationModel(
       "alpha",
       "assets/images/sites/alpha.png",
       "best place to enjoy reading manhwas",
     ),
-    AnimeProvider(
+    ScanlationModel(
       "flame",
       "assets/images/sites/flame.jpeg",
       "best place to enjoy reading manhwas",
     ),
-    AnimeProvider(
+    ScanlationModel(
       "omega",
       "assets/images/sites/omega.png",
       "best place to enjoy reading manhwas",
     ),
-    AnimeProvider(
+    ScanlationModel(
       "luminous",
       "assets/images/sites/luminous.png",
       "best place to enjoy reading manhwas",
     ),
-    AnimeProvider(
+    ScanlationModel(
       "realm",
       "assets/images/sites/realm.png",
       "best place to enjoy reading manhwas",
     )
   ];
 
-  List<AnimeProvider> get allProviders {
+  List<ScanlationModel> get allProviders {
     return [..._allProvider];
   }
 }

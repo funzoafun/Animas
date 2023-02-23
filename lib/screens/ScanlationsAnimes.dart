@@ -41,23 +41,25 @@ class _ScanlationsAnimesState extends State<ScanlationsAnimes> {
     final animeItem = Provider.of<Animes>(context).allAnimes;
 
     return Scaffold(
-      appBar: AppBar(title: Text('${scanlationName.toUpperCase()} Scans')),
       body: _isLoading
           ? Center(
               child: CircularProgressIndicator(),
             )
-          : GridView.builder(
-              gridDelegate:
-                  SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
-              itemBuilder: ((context, index) => Container(
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image: NetworkImage(animeItem[index].mangaCover),
+          : Container(
+              margin: EdgeInsets.only(top: 150, right: 15, left: 15),
+              child: GridView.builder(
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2),
+                itemBuilder: ((context, index) => Container(
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image: NetworkImage(animeItem[index].mangaCover),
+                        ),
                       ),
-                    ),
-                    child: Text(animeItem[index].mangaTitle),
-                  )),
-              itemCount: animeItem.length,
+                      child: Text(animeItem[index].mangaTitle),
+                    )),
+                itemCount: animeItem.length,
+              ),
             ),
     );
   }

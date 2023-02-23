@@ -1,5 +1,5 @@
 import 'package:animas/model/AnimasModel.dart';
-import 'package:animas/model/ProviderModel.dart';
+import 'package:animas/model/ScnalationModel.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -8,7 +8,7 @@ class AnimeProviderItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final animeProviderItem = Provider.of<AnimeProvider>(context);
+    final animeProviderItem = Provider.of<ScanlationModel>(context);
     return Container(
       child: Card(
         shape: RoundedRectangleBorder(

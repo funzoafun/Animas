@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../widgets/AnimeProviderItem.dart';
-import '../provider/AnimeProviders.dart';
+import '../provider/scanlations_provider.dart';
 import '../provider/api_provider.dart';
 import '../screens/ScanlationsAnimes.dart';
 
@@ -20,10 +20,10 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final allProviders =
-        Provider.of<AnimeProviders>(context, listen: false).allProviders;
+        Provider.of<ScanlationProvider>(context, listen: false).allProviders;
 
     return Scaffold(
-      backgroundColor: Color.fromARGB(214, 28, 113, 192),
+      backgroundColor: Color.fromARGB(253, 44, 106, 165),
       body: Center(
         child: Column(
           children: [
