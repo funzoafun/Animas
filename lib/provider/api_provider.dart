@@ -38,7 +38,11 @@ class ApiProvider {
     animelist.forEach((element) {
       if (element["MangaCover"] != null &&
           element["MangaShortUrl"] != null &&
-          element["MangaSynopsis"] != null) {
+          element["MangaSynopsis"] != null &&
+          element["_id"] != null &&
+          element["MangaUrl"] != null &&
+          element["_type"] != null &&
+          element["ScrapeDate"] != null) {
         allAnimes.add(
           Animas(
             mangaid: element['_id'],

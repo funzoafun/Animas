@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../widgets/AnimeProviderItem.dart';
+import '../widgets/ScanlationItem.dart';
 import '../provider/scanlations_provider.dart';
 import '../provider/api_provider.dart';
 import '../screens/ScanlationsAnimes.dart';
@@ -44,7 +44,7 @@ class Home extends StatelessWidget {
                               arguments: allProviders[index].name)),
                           child: ChangeNotifierProvider.value(
                               value: allProviders[index],
-                              child: AnimeProviderItem()),
+                              child: ScanlationItem()),
                         )),
                     itemCount: allProviders.length,
                   )),

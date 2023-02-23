@@ -77,6 +77,10 @@ flutter:
     - assets/images/sites/omega.png
     - assets/images/sites/luminous.png
     - assets/images/sites/realm.png
+    - assets/images/sites/asurabanner.jpeg
+    - assets/images/sites/flamebanner.jpeg
+    - assets/images/sites/luminous.jpeg
+    - assets/images/sites/realmscans.webp
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

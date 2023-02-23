@@ -3,8 +3,8 @@ import 'package:animas/model/ScnalationModel.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class AnimeProviderItem extends StatelessWidget {
-  const AnimeProviderItem({super.key});
+class ScanlationItem extends StatelessWidget {
+  const ScanlationItem({super.key});
 
   @override
   Widget build(BuildContext context) {
