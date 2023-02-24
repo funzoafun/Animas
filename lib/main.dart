@@ -1,5 +1,6 @@
 import 'package:animas/provider/scanlations_provider.dart';
-import 'package:animas/screens/ScanlationsAnimes.dart';
+import 'package:animas/screens/AnimeList.dart';
+import 'package:animas/screens/ChapterList.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter/services.dart';
@@ -56,7 +57,8 @@ class MyApp extends StatelessWidget {
         routes: {
           LoginLandingPage.routeName: (context) => LoginLandingPage(),
           Home.routeName: (context) => Home(),
-          ScanlationsAnimes.routeName: (context) => ScanlationsAnimes(),
+          AnimeList.routeName: (context) => AnimeList(),
+          ChapterList.routeName: (context) => ChapterList(),
         },
       ),
     );

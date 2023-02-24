@@ -5,7 +5,7 @@ import 'package:provider/provider.dart';
 import '../widgets/ScanlationItem.dart';
 import '../provider/scanlations_provider.dart';
 import '../provider/api_provider.dart';
-import '../screens/ScanlationsAnimes.dart';
+import 'AnimeList.dart';
 
 class Home extends StatelessWidget {
   Home({super.key});
@@ -40,7 +40,7 @@ class Home extends StatelessWidget {
                   child: ListView.builder(
                     itemBuilder: ((context, index) => InkWell(
                           onTap: (() => Navigator.of(context).pushNamed(
-                              ScanlationsAnimes.routeName,
+                              AnimeList.routeName,
                               arguments: allProviders[index].name)),
                           child: ChangeNotifierProvider.value(
                               value: allProviders[index],

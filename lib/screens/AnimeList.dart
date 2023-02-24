@@ -1,5 +1,6 @@
 import 'package:animas/provider/Animes.dart';
 import 'package:animas/provider/api_provider.dart';
+import 'package:animas/screens/ChapterList.dart';
 import 'package:animas/widgets/AnimeItem.dart';
 import 'package:animas/widgets/ScanlationItem.dart';
 import 'package:flutter/material.dart';
@@ -10,15 +11,15 @@ import 'package:flutter/src/widgets/framework.dart';
 
 import '../provider/scanlations_provider.dart';
 
-class ScanlationsAnimes extends StatefulWidget {
-  const ScanlationsAnimes({super.key});
+class AnimeList extends StatefulWidget {
+  const AnimeList({super.key});
   static const routeName = "/scanlationsAnime";
 
   @override
-  State<ScanlationsAnimes> createState() => _ScanlationsAnimesState();
+  State<AnimeList> createState() => _AnimeListState();
 }
 
-class _ScanlationsAnimesState extends State<ScanlationsAnimes> {
+class _AnimeListState extends State<AnimeList> {
   var _isInit = true;
   var _isLoading = true;
 
@@ -74,12 +75,17 @@ class _ScanlationsAnimesState extends State<ScanlationsAnimes> {
                     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 2,
                       crossAxisSpacing: 10,
-                      mainAxisSpacing: 20,
                       childAspectRatio: 0.7,
                     ),
-                    itemBuilder: ((context, index) =>
-                        ChangeNotifierProvider.value(
-                            value: allanime[index], child: AnimeItem())),
+                    itemBuilder: ((context, index) => InkWell(
+                          onTap: (() => Navigator.of(context)
+                                  .pushNamed(ChapterList.routeName, arguments: [
+                                allanime[index].provider,
+                                allanime[index].mangaid
+                              ])),
+                          child: ChangeNotifierProvider.value(
+                              value: allanime[index], child: AnimeItem()),
+                        )),
                     itemCount: allanime.length,
                   ),
                 ),

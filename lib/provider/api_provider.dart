@@ -4,6 +4,8 @@ import '../model/AnimasModel.dart';
 import 'package:http/http.dart' as http;
 
 class ApiProvider {
+  final apiKey = 'd38e998f8amsh4f046b9eac5d954p1b6ee6jsn32043a13bed8';
+
   Future getSearchedAnimas() async {
     final Uri url = Uri.parse(
         'https://manga-scrapper.p.rapidapi.com/series/?provider=asura&limit=10');
@@ -23,9 +25,9 @@ class ApiProvider {
 
   Future<List<Animas>> getAnimesByProvider(String provider) async {
     final Uri url = Uri.parse(
-        "https://manga-scrapper.p.rapidapi.com/series/?provider=${provider}&limit=30");
+        "https://manga-scrapper.p.rapidapi.com/series/?provider=${provider}&limit=10");
     final headers = {
-      'X-RapidAPI-Key': 'e78778340fmshc8dfaf9b064c385p10da98jsn4f7fd7116ce3',
+      'X-RapidAPI-Key': apiKey,
       'X-RapidAPI-Host': 'manga-scrapper.p.rapidapi.com'
     };
     final response = await http.get(
@@ -36,6 +38,9 @@ class ApiProvider {
     final List<dynamic> animelist = extractedData['data']['series'];
     final List<Animas> allAnimes = [];
     animelist.forEach((element) {
+      // List<Chapter> chapters = [];
+      // getAnimeChapters(element["_type"], element["_id"])
+      //     .then((value) => chapters = value);
       if (element["MangaCover"] != null &&
           element["MangaShortUrl"] != null &&
           element["MangaSynopsis"] != null &&
@@ -54,13 +59,62 @@ class ApiProvider {
             mangaSypnosis: element['MangaSynopsis'] ?? 'no synopsis',
             provider: element["_type"],
             scrapeDate: element['ScrapeDate'],
+            // chapters: chapters,
           ),
         );
       }
     });
-    allAnimes.forEach((element) {
-      print(element.mangaTitle);
-    });
+
     return allAnimes;
+  }
+
+  Future<List<Chapter>> getAnimeChapters(
+      String provider, String chapterId) async {
+    final Uri url = Uri.parse(
+        "https://manga-scrapper.p.rapidapi.com/series/$chapterId/chapters/?provider=$provider");
+    final headers = {
+      'X-RapidAPI-Key': apiKey,
+      'X-RapidAPI-Host': 'manga-scrapper.p.rapidapi.com'
+    };
+
+    final response = await http.get(url, headers: headers);
+    final extractedData = await jsonDecode(response.body);
+    final List<dynamic> chapterList = extractedData["data"]["series"];
+    final List<Chapter> chapters = [];
+    chapterList.forEach(
+      (chapter) {
+        if (chapter['_id'] != null &&
+            chapter['ChapterNextSlug'] != null &&
+            chapter['ChapterOrder'] != null &&
+            chapter['ChapterPrevSlug'] != null &&
+            chapter['ChapterShortUrl'] != null &&
+            chapter['ChapterTitle'] != null &&
+            chapter['ChapterNumber'] != null &&
+            chapter['ChapterUrl'] != null &&
+            chapter['ChapterContent'] != null &&
+            chapter['ChapterCanonicalUrl'] != null &&
+            chapter['ChapterDate'] != null &&
+            chapter['ChapterType'] != null &&
+            chapter['ScrapeDate'] != null) {
+          chapters.add(
+            Chapter(
+              chapterId: chapter['_id'],
+              // chapterNextSlug: chapter['ChapterNextSlug'],
+              chapterOrder: chapter['ChapterOrder'],
+              // chapterPrevSlug: chapter['ChapterPrevSlug'] ?? 'noslug',
+              chapterShortUrl: chapter['ChapterShortUrl'],
+              chapterTitle: chapter['ChapterTitle'],
+              chapterNumber: chapter['ChapterNumber'],
+              chapterUrl: chapter['ChapterUrl'],
+              chapterContent: chapter['ChapterContent'],
+              chapterDate: chapter['ChapterDate'],
+              chapterType: chapter['ChapterType'],
+              scrapeDate: chapter['ScrapeDate'],
+            ),
+          );
+        }
+      },
+    );
+    return chapters;
   }
 }
